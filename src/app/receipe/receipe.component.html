@@ -1,0 +1,26 @@
+<div class="logo">
+    <h1>RECIEPE</h1>
+    
+</div>
+<div class="search">
+    <input type="text" name="search" #receipe><br><br>
+
+    <input class="search-button" type="submit" value="Reciepe Search" (click)="getReciepe(receipe.value)">
+    <hr>
+    <p>
+        Recipe is a recipe search engine..
+    </p>
+</div>
+
+<div class="result" *ngFor="let i of data.results">
+    <img src="{{i.thumbnail}}" style="float: left;padding: 20px;">
+    <h3><a href="{{i.href}}" target="_blank">{{i.title}}</a></h3>
+    
+    <h6>Ingredients</h6><p>{{i.ingredients}}</p>
+<hr>
+</div>
+
+<div >
+    <button class="next" *ngIf="data.title=='Recipe Puppy'" (click)="nextPage(receipe.value)">Next</button>
+</div>
+<br>
